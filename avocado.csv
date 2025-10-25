@@ -1,0 +1,5 @@
+mkdir avocado_analytics
+cd avocado_analytics
+python -m venv venv
+source venv/bin/activate
+python -m pip install dash==2.8.1 pandas==1.5.3
