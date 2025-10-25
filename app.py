@@ -3,8 +3,8 @@ from dash import Dash, dcc, html
 
 data = (
     pd.read_csv("avocado.csv")
-    df.query("`type` == 'conventional' and region == 'Albany'")
-    .assign(Date=lambda data: pd.to_datetime(data["Date"], format="%Y-%m-%d"))
+    .query("`type` == 'conventional' and region == 'Albany'")
+    .assign(Date=lambda d: pd.to_datetime(d["Date"], format="%Y-%m-%d"))
     .sort_values(by="Date")
 )
 
@@ -15,8 +15,8 @@ app.layout = html.Div(
         html.H1(children="Avocado Analytics"),
         html.P(
             children=(
-                "Analyze the behavior of avocado prices and the number"
-                " of avocados sold in the US between 2015 and 2018"
+                "Analyze the behavior of avocado prices and the number "
+                "of avocados sold in the US between 2015 and 2018."
             ),
         ),
         dcc.Graph(
